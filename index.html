@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>To Do List</title>
+</head>
+<body>
+    <h1 id="title">To Do List</h1>
+    <p id="author">by @quinteros_g</p>
+
+    <div class="contGeneral">
+
+        <div class="contNew cont">
+            <div class="contInput row">
+                <input type="text" name="newTask" id="inputNewTask" class="input form-control" autofocus placeholder="Input your task...">
+                <input type="text" name="newTask" id="inputNewTaskDesc" class="input form-control" placeholder="Input some info...">
+            </div>
+            <div class="contBtn row">
+                <input type="button" value="Clear" id="btnClear" onclick="deleteTasks()" class="btn btn-secondary col-5">
+                <input type="button" value="Add New" id="btnNew" onclick="addTasks(inputNewTask, inputNewTaskDesc)" class="btn btn-primary col-5 offset-2">
+            </div>
+        </div>
+
+        <div id="contTasks" class="cont">
+
+            <div class="task">
+                <div class="taskBtn">
+                    <button id="taskState" onclick="deleteTasks()"></button>
+                </div>
+
+                <div class="taskInfo">
+                    <h2 id="taskTitle"></h2>
+                    <p id="taskDesc"></p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
