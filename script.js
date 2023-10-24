@@ -5,7 +5,7 @@ if (todoList === null) {
 }
 let id = todoList.length;
 let btnClear = document.getElementById("btnClear");
-let btnNew = document.getElementById("btnNew");
+let btnAdd = document.getElementById("btnAdd");
 let contTasks = document.getElementById("contTasks");
 
 const addElement = () => {
@@ -13,20 +13,18 @@ const addElement = () => {
   contTasks.innerHTML = ``;
   for (let i = 0; i < todoList.length; i++) {
     contTasks.innerHTML += `
-            <div class="task">
-                <div class="taskBtn">
-                    <button id="taskState" onclick="deleteTask(${todoList[i].id})"></button>
-                </div>
-                <div class="taskInfo">
-                    <h2 id="taskTitle">${todoList[i].title}</h2>
-                    <p id="taskDesc">${todoList[i].desc}</p>
-                </div>
-            </div>
-        `;
+      <div id="task">
+        <div class="taskInfo">
+          <h2 id="taskTitle">${todoList[i].title}</h2>
+          <p id="taskDesc">${todoList[i].desc}</p>
+        </div>
+        <i id="taskState" class="fa-solid fa-xmark" onclick="deleteTask(${todoList[i].id})"></i>
+      </div>
+    `;
   }
 };
 
-const addTasks = (title, desc) => {
+const addTask = (title, desc) => {
   id++;
   title.focus();
   if (title.value != "") {
@@ -55,4 +53,3 @@ const deleteTask = (id) => {
     }
   }
 };
-addElement();
